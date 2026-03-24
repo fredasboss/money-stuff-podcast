@@ -1,0 +1,13 @@
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+<channel>
+<title>Money Stuff Podcast</title>
+<link>https://YOUR_GITHUB_USERNAME.github.io/money-stuff-podcast</link>
+<description>Auto-generated audio version of Matt Levine's Money Stuff newsletter.</description>
+<language>en-us</language>
+<generator>money-stuff-podcast-bot</generator>
+<itunes:author>Matt Levine / Bloomberg</itunes:author>
+<itunes:explicit>false</itunes:explicit>
+<itunes:type>episodic</itunes:type>
+<lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+</channel>
+</rss>
