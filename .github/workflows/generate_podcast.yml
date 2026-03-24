@@ -1,0 +1,101 @@
+name: Generate Money Stuff Podcast Episode
+
+on:
+  repository_dispatch:
+    types: [new_newsletter]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install edge-tts
+
+      - name: Write newsletter text to file
+        env:
+          NEWSLETTER_TEXT: ${{ toJson(github.event.client_payload.text) }}
+          NEWSLETTER_SUBJECT: ${{ github.event.client_payload.subject }}
+          NEWSLETTER_DATE: ${{ github.event.client_payload.date }}
+        run: |
+          python - <<'EOF'
+          import os, json
+
+          text = json.loads(os.environ["NEWSLETTER_TEXT"])
+          subject = os.environ["NEWSLETTER_SUBJECT"]
+          date = os.environ["NEWSLETTER_DATE"]
+
+          # Add a spoken intro
+          intro = f"Money Stuff Newsletter. {subject}. {date}.\n\n"
+          full_text = intro + text
+
+          with open("newsletter_text.txt", "w", encoding="utf-8") as f:
+              f.write(full_text)
+
+          print(f"Text written: {len(full_text)} characters")
+          EOF
+
+      - name: Generate MP3 with Edge TTS
+        env:
+          NEWSLETTER_DATE: ${{ github.event.client_payload.date }}
+        run: |
+          python - <<'EOF'
+          import asyncio
+          import edge_tts
+          import os
+
+          date = os.environ["NEWSLETTER_DATE"]
+          output_file = f"audio/{date}.mp3"
+
+          os.makedirs("audio", exist_ok=True)
+
+          with open("newsletter_text.txt", "r", encoding="utf-8") as f:
+              text = f.read()
+
+          async def generate():
+              # Use a clear, natural-sounding voice
+              communicate = edge_tts.Communicate(text, voice="en-US-GuyNeural")
+              await communicate.save(output_file)
+              print(f"Audio saved to {output_file}")
+
+          asyncio.run(generate())
+          EOF
+
+      - name: Get MP3 file size
+        env:
+          NEWSLETTER_DATE: ${{ github.event.client_payload.date }}
+        id: filesize
+        run: |
+          SIZE=$(stat -c%s "audio/${{ github.event.client_payload.date }}.mp3")
+          echo "size=$SIZE" >> $GITHUB_OUTPUT
+          echo "MP3 size: $SIZE bytes"
+
+      - name: Update RSS feed
+        env:
+          NEWSLETTER_DATE: ${{ github.event.client_payload.date }}
+          NEWSLETTER_SUBJECT: ${{ github.event.client_payload.subject }}
+          GITHUB_USERNAME: ${{ vars.GITHUB_USERNAME }}
+          GITHUB_REPO: ${{ vars.GITHUB_REPO || 'money-stuff-podcast' }}
+          FILE_SIZE: ${{ steps.filesize.outputs.size }}
+        run: |
+          python update_rss.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add audio/ feed.xml
+          git commit -m "Add episode: ${{ github.event.client_payload.date }}"
+          git push
+
