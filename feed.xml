@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2026 00:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Money Stuff: Be Liquid When Others Are Illiquid</title>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 -0000</pubDate>
+      <guid>https://.github.io/money-stuff-podcast/audio/2026-03-05.mp3</guid>
+      <link>https://.github.io/money-stuff-podcast/audio/2026-03-05.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: Be Liquid When Others Are Illiquid</description>
+      <enclosure url="https://.github.io/money-stuff-podcast/audio/2026-03-05.mp3" length="9409968" type="audio/mpeg" />
+      <itunes:title>Money Stuff: Be Liquid When Others Are Illiquid</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Private Credit Is Not on Sale</title>
       <pubDate>Tue, 24 Mar 2026 00:00:00 -0000</pubDate>
