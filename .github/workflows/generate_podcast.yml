@@ -85,7 +85,7 @@ jobs:
         env:
           NEWSLETTER_DATE: ${{ github.event.client_payload.date }}
           NEWSLETTER_SUBJECT: ${{ github.event.client_payload.subject }}
-          GITHUB_USERNAME: ${{ vars.GITHUB_USERNAME }}
+          GITHUB_USERNAME: ${{ vars.fredasboss }}
           GITHUB_REPO: ${{ vars.GITHUB_REPO || 'money-stuff-podcast' }}
           FILE_SIZE: ${{ steps.filesize.outputs.size }}
         run: |
