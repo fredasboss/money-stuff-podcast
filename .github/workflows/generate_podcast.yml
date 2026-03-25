@@ -23,69 +23,70 @@ jobs:
         run: |
           pip install edge-tts mutagen
 
-      - name: Write newsletter text to file
+      - name: Generate MP3 with Edge TTS and ID3 tags
         env:
           NEWSLETTER_TEXT: ${{ toJson(github.event.client_payload.text) }}
           NEWSLETTER_SUBJECT: ${{ github.event.client_payload.subject }}
           NEWSLETTER_DATE: ${{ github.event.client_payload.date }}
         run: |
           python - <<'EOF'
-          import os, json
-
-          text = json.loads(os.environ["NEWSLETTER_TEXT"])
-          subject = os.environ["NEWSLETTER_SUBJECT"]
-          date = os.environ["NEWSLETTER_DATE"]
-
-          # Add a spoken intro
-          intro = f"Money Stuff Newsletter. {subject}. {date}.\n\n"
-          full_text = intro + text
-
-          with open("newsletter_text.txt", "w", encoding="utf-8") as f:
-              f.write(full_text)
-
-          print(f"Text written: {len(full_text)} characters")
-          EOF
-
-      - name: Generate MP3 with Edge TTS
-        env:
-          NEWSLETTER_DATE: ${{ github.event.client_payload.date }}
-        run: |
-          python - <<'EOF'
           import asyncio
           import edge_tts
           import os
+          import json
+          from mutagen.id3 import ID3, TIT2, TPE1, TALB, ID3NoHeaderError
+          from mutagen.mp3 import MP3
 
+          text_raw = os.environ["NEWSLETTER_TEXT"]
+          subject = os.environ["NEWSLETTER_SUBJECT"]
           date = os.environ["NEWSLETTER_DATE"]
-          output_file = f"audio/{date}.mp3"
 
+          text = json.loads(text_raw)
+
+          # Remove URLs
+          import re
+          text = re.sub(r'https?://\S+', '', text)
+          text = re.sub(r'\n{3,}', '\n\n', text)
+          text = text.strip()
+
+          # Add spoken intro
+          intro = f"Money Stuff Newsletter. {subject}. {date}.\n\n"
+          full_text = intro + text
+
+          # Truncate if too long
+          if len(full_text) > 80000:
+              full_text = full_text[:80000] + "\n\nEnd of newsletter."
+
+          output_file = f"audio/{date}.mp3"
           os.makedirs("audio", exist_ok=True)
 
-          with open("newsletter_text.txt", "r", encoding="utf-8") as f:
-              text = f.read()
-
           async def generate():
-              # Use a clear, natural-sounding voice
-              communicate = edge_tts.Communicate(text, voice="en-US-GuyNeural")
+              communicate = edge_tts.Communicate(full_text, voice="en-US-GuyNeural")
               await communicate.save(output_file)
-              # Add ID3 tags
-              from mutagen.id3 import ID3, TIT2, TPE1, TALB
-              from mutagen.mp3 import MP3
-              audio = MP3(output_file)
-              audio.save()
-              tags = ID3(output_file)
-              tags.add(TIT2(encoding=3, text=subject))
-              tags.add(TPE1(encoding=3, text="Matt Levine"))
-              tags.add(TALB(encoding=3, text="Money Stuff Podcast"))
-              tags.save()
               print(f"Audio saved to {output_file}")
 
           asyncio.run(generate())
+
+          # Add ID3 tags so podcast apps recognize the file
+          try:
+              tags = ID3(output_file)
+          except ID3NoHeaderError:
+              tags = ID3()
+
+          tags.add(TIT2(encoding=3, text=subject))
+          tags.add(TPE1(encoding=3, text="Matt Levine"))
+          tags.add(TALB(encoding=3, text="Money Stuff Podcast"))
+          tags.save(output_file)
+
+          size = os.path.getsize(output_file)
+          print(f"MP3 size: {size} bytes")
+          print(f"ID3 tags added successfully")
           EOF
 
       - name: Get MP3 file size
+        id: filesize
         env:
           NEWSLETTER_DATE: ${{ github.event.client_payload.date }}
-        id: filesize
         run: |
           SIZE=$(stat -c%s "audio/${{ github.event.client_payload.date }}.mp3")
           echo "size=$SIZE" >> $GITHUB_OUTPUT
@@ -95,8 +96,8 @@ jobs:
         env:
           NEWSLETTER_DATE: ${{ github.event.client_payload.date }}
           NEWSLETTER_SUBJECT: ${{ github.event.client_payload.subject }}
-          GITHUB_USERNAME: ${{ vars.fredasboss }}
-          GITHUB_REPO: ${{ vars.GITHUB_REPO || 'money-stuff-podcast' }}
+          GITHUB_USERNAME: fredasboss
+          GITHUB_REPO: money-stuff-podcast
           FILE_SIZE: ${{ steps.filesize.outputs.size }}
         run: |
           python update_rss.py
@@ -108,4 +109,3 @@ jobs:
           git add audio/ feed.xml
           git commit -m "Add episode: ${{ github.event.client_payload.date }}"
           git push
-
