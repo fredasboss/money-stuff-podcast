@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
     <title>Money Stuff Podcast</title>
     <link>https://fredasboss.github.io/money-stuff-podcast</link>
@@ -9,6 +9,16 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Money Stuff: Private Credit Is Not on Sale</title>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 -0000</pubDate>
+      <guid>https://.github.io/money-stuff-podcast/audio/2026-03-24.mp3</guid>
+      <link>https://.github.io/money-stuff-podcast/audio/2026-03-24.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: Private Credit Is Not on Sale</description>
+      <enclosure url="https://.github.io/money-stuff-podcast/audio/2026-03-24.mp3" length="12337632" type="audio/mpeg" />
+      <itunes:title>Money Stuff: Private Credit Is Not on Sale</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
   </channel>
 </rss>
