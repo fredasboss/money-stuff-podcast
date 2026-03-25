@@ -21,7 +21,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install edge-tts
+          pip install edge-tts mutagen
 
       - name: Write newsletter text to file
         env:
@@ -67,6 +67,16 @@ jobs:
               # Use a clear, natural-sounding voice
               communicate = edge_tts.Communicate(text, voice="en-US-GuyNeural")
               await communicate.save(output_file)
+              # Add ID3 tags
+              from mutagen.id3 import ID3, TIT2, TPE1, TALB
+              from mutagen.mp3 import MP3
+              audio = MP3(output_file)
+              audio.save()
+              tags = ID3(output_file)
+              tags.add(TIT2(encoding=3, text=subject))
+              tags.add(TPE1(encoding=3, text="Matt Levine"))
+              tags.add(TALB(encoding=3, text="Money Stuff Podcast"))
+              tags.save()
               print(f"Audio saved to {output_file}")
 
           asyncio.run(generate())
