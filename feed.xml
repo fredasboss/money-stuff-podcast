@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 26 Mar 2026 00:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2026 00:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Money Stuff: The Podcast: Also Sticky</title>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 -0000</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-03-27.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-03-27.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: The Podcast: Also Sticky</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-03-27.mp3" length="503190" type="audio/mpeg" />
+      <itunes:title>Money Stuff: The Podcast: Also Sticky</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Weather Prediction Prediction</title>
       <pubDate>Thu, 26 Mar 2026 00:00:00 -0000</pubDate>
