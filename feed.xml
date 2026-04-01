@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Money Stuff: OpenAI Is Almost Public</title>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 -0000</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-04-01.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-04-01.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: OpenAI Is Almost Public</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-04-01.mp3" length="10764224" type="audio/mpeg" />
+      <itunes:title>Money Stuff: OpenAI Is Almost Public</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Are Algae Securities Fraud?</title>
       <pubDate>Tue, 31 Mar 2026 00:00:00 -0000</pubDate>
