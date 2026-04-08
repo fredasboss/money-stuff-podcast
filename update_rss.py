@@ -24,8 +24,8 @@ FEED_FILE = "feed.xml"
 AUDIO_URL = f"{BASE_URL}/audio/{date_str}.mp3"
 
 # Convert date string to RFC 2822 format for RSS
-date_obj = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
-pub_date = formatdate(time.mktime(date_obj.timetuple()))
+date_obj = datetime.strptime(date_str, "%Y-%m-%d")
+pub_date = date_obj.strftime("%a, %d %b %Y 12:00:00 -0400")
 
 # ---- Load or create the feed ----
 ET.register_namespace("itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
