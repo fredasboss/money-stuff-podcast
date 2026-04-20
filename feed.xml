@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 16 Apr 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: The SEC Can’t Find Victims</title>
+      <pubDate>Mon, 20 Apr 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-04-20.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-04-20.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: The SEC Can’t Find Victims</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-04-20.mp3" length="9895185" type="audio/mpeg" />
+      <itunes:title>Money Stuff: The SEC Can’t Find Victims</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Tax Alpha Needs Some Real Alpha</title>
       <pubDate>Thu, 16 Apr 2026 12:00:00 -0400</pubDate>
