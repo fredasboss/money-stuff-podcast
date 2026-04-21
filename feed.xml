@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 20 Apr 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: Private Markets Charge More</title>
+      <pubDate>Tue, 21 Apr 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-04-21.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-04-21.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: Private Markets Charge More</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-04-21.mp3" length="9887112" type="audio/mpeg" />
+      <itunes:title>Money Stuff: Private Markets Charge More</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: The SEC Can’t Find Victims</title>
       <pubDate>Mon, 20 Apr 2026 12:00:00 -0400</pubDate>
