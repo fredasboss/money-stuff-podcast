@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 30 Apr 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: GameStop Doesn’t Have Enough Stock</title>
+      <pubDate>Mon, 04 May 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-05-04.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-05-04.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: GameStop Doesn’t Have Enough Stock</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-05-04.mp3" length="12995154" type="audio/mpeg" />
+      <itunes:title>Money Stuff: GameStop Doesn’t Have Enough Stock</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Sell the Electricity No One Is Using</title>
       <pubDate>Thu, 30 Apr 2026 12:00:00 -0400</pubDate>
