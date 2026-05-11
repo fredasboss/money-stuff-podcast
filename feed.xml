@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 08 May 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: KKR Buys Back Some Private Credit</title>
+      <pubDate>Mon, 11 May 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-05-11.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-05-11.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: KKR Buys Back Some Private Credit</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-05-11.mp3" length="8030831" type="audio/mpeg" />
+      <itunes:title>Money Stuff: KKR Buys Back Some Private Credit</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: The Podcast: Timeless Wisdom</title>
       <pubDate>Fri, 08 May 2026 12:00:00 -0400</pubDate>
