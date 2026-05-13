@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 12 May 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: Nobody Can Read the Prospectus</title>
+      <pubDate>Wed, 13 May 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-05-13.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-05-13.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: Nobody Can Read the Prospectus</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-05-13.mp3" length="9835943" type="audio/mpeg" />
+      <itunes:title>Money Stuff: Nobody Can Read the Prospectus</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: EBay Won’t Play With GameStop</title>
       <pubDate>Tue, 12 May 2026 12:00:00 -0400</pubDate>
