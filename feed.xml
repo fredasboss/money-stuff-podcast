@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 04 Jun 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: The Podcast: Champagne and Caviar</title>
+      <pubDate>Fri, 05 Jun 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-05.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-05.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: The Podcast: Champagne and Caviar</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-05.mp3" length="409217" type="audio/mpeg" />
+      <itunes:title>Money Stuff: The Podcast: Champagne and Caviar</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Get Your SpaceX Bets in Now</title>
       <pubDate>Thu, 04 Jun 2026 12:00:00 -0400</pubDate>
