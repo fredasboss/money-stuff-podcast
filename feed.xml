@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 12 Jun 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: The Stock Market Will Get More Stock</title>
+      <pubDate>Mon, 15 Jun 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-15.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-15.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: The Stock Market Will Get More Stock</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-15.mp3" length="9378004" type="audio/mpeg" />
+      <itunes:title>Money Stuff: The Stock Market Will Get More Stock</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: The Podcast: Strongly Worded Letters</title>
       <pubDate>Fri, 12 Jun 2026 12:00:00 -0400</pubDate>
