@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 23 Jun 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: Insider Trading Isn't Romantic</title>
+      <pubDate>Wed, 24 Jun 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-24.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-24.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: Insider Trading Isn't Romantic</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-24.mp3" length="10884303" type="audio/mpeg" />
+      <itunes:title>Money Stuff: Insider Trading Isn't Romantic</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Short Squeeze as a Service</title>
       <pubDate>Tue, 23 Jun 2026 12:00:00 -0400</pubDate>
