@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 25 Jun 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: The Podcast: One Big Blob of Elon</title>
+      <pubDate>Fri, 26 Jun 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-26.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-26.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: The Podcast: One Big Blob of Elon</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-26.mp3" length="424352" type="audio/mpeg" />
+      <itunes:title>Money Stuff: The Podcast: One Big Blob of Elon</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: There’s a SpaceX Treasury Company</title>
       <pubDate>Thu, 25 Jun 2026 12:00:00 -0400</pubDate>
