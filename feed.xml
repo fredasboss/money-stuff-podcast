@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 29 Jun 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: Susquehanna Sold Some Suspicious Puts</title>
+      <pubDate>Tue, 30 Jun 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-30.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-30.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: Susquehanna Sold Some Suspicious Puts</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-06-30.mp3" length="10562725" type="audio/mpeg" />
+      <itunes:title>Money Stuff: Susquehanna Sold Some Suspicious Puts</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: People Are Worried About Stock Market Leverage</title>
       <pubDate>Mon, 29 Jun 2026 12:00:00 -0400</pubDate>
