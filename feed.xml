@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 10 Jul 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: ETFs Are for Bets</title>
+      <pubDate>Mon, 13 Jul 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-07-13.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-07-13.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: ETFs Are for Bets</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-07-13.mp3" length="11274776" type="audio/mpeg" />
+      <itunes:title>Money Stuff: ETFs Are for Bets</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Sports Gambling ETF</title>
       <pubDate>Fri, 10 Jul 2026 12:00:00 -0400</pubDate>
