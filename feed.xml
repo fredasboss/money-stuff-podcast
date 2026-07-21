@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 20 Jul 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: LSE Will Trade 22.83 Hours a Day</title>
+      <pubDate>Tue, 21 Jul 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-07-21.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-07-21.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: LSE Will Trade 22.83 Hours a Day</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-07-21.mp3" length="9877315" type="audio/mpeg" />
+      <itunes:title>Money Stuff: LSE Will Trade 22.83 Hours a Day</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Ice Cream Hedging</title>
       <pubDate>Mon, 20 Jul 2026 12:00:00 -0400</pubDate>
