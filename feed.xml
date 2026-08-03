@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 31 Jul 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: Hedgehog Hedge Fund</title>
+      <pubDate>Mon, 03 Aug 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-03.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-03.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: Hedgehog Hedge Fund</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-03.mp3" length="12246741" type="audio/mpeg" />
+      <itunes:title>Money Stuff: Hedgehog Hedge Fund</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: The Podcast: No Kiddie Pool</title>
       <pubDate>Fri, 31 Jul 2026 12:00:00 -0400</pubDate>
