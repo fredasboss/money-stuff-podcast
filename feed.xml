@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 03 Aug 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: Leveraged ETF Crash Hedging ETF</title>
+      <pubDate>Tue, 04 Aug 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-04.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-04.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: Leveraged ETF Crash Hedging ETF</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-04.mp3" length="11173745" type="audio/mpeg" />
+      <itunes:title>Money Stuff: Leveraged ETF Crash Hedging ETF</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Hedgehog Hedge Fund</title>
       <pubDate>Mon, 03 Aug 2026 12:00:00 -0400</pubDate>
