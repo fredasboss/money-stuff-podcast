@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 07 Aug 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: The Situation Is Fine</title>
+      <pubDate>Mon, 10 Aug 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-10.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-10.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: The Situation Is Fine</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-10.mp3" length="9100512" type="audio/mpeg" />
+      <itunes:title>Money Stuff: The Situation Is Fine</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Fake SpaceX Stock Isn’t Worth as Much</title>
       <pubDate>Fri, 07 Aug 2026 12:00:00 -0400</pubDate>
