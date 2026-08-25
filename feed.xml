@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 24 Aug 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: LeBron Bonds</title>
+      <pubDate>Tue, 25 Aug 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-25.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-25.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: LeBron Bonds</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-08-25.mp3" length="11849473" type="audio/mpeg" />
+      <itunes:title>Money Stuff: LeBron Bonds</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Who Should Control Anthropic?</title>
       <pubDate>Mon, 24 Aug 2026 12:00:00 -0400</pubDate>
