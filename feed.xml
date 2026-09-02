@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 01 Sep 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: The ETF Dividend Flip</title>
+      <pubDate>Wed, 02 Sep 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-09-02.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-09-02.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: The ETF Dividend Flip</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-09-02.mp3" length="10141087" type="audio/mpeg" />
+      <itunes:title>Money Stuff: The ETF Dividend Flip</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Amazon Charged the First Price</title>
       <pubDate>Tue, 01 Sep 2026 12:00:00 -0400</pubDate>
