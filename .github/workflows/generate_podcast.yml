@@ -61,7 +61,7 @@ jobs:
           os.makedirs("audio", exist_ok=True)
 
           async def generate():
-              communicate = edge_tts.Communicate(full_text, voice="en-US-GuyNeural")
+              communicate = edge_tts.Communicate(full_text, voice="en-US-BrianMultilingualNeural", rate="+8%")
               await communicate.save(output_file)
               print(f"Audio saved to {output_file}")
 
