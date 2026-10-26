@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 22 Oct 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: Anthropic Raises Concerns</title>
+      <pubDate>Mon, 26 Oct 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-10-26.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-10-26.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: Anthropic Raises Concerns</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-10-26.mp3" length="7370692" type="audio/mpeg" />
+      <itunes:title>Money Stuff: Anthropic Raises Concerns</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Zuckerberg Wants to Keep His Votes</title>
       <pubDate>Thu, 22 Oct 2026 12:00:00 -0400</pubDate>
