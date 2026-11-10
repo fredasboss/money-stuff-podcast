@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 09 Nov 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: Anthropic Has Some Anchor Investors</title>
+      <pubDate>Tue, 10 Nov 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-11-10.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-11-10.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: Anthropic Has Some Anchor Investors</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-11-10.mp3" length="7792895" type="audio/mpeg" />
+      <itunes:title>Money Stuff: Anthropic Has Some Anchor Investors</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: Is the Nvidia Affair Securities Fraud?</title>
       <pubDate>Mon, 09 Nov 2026 12:00:00 -0400</pubDate>
