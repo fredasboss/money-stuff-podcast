@@ -1,0 +1,66 @@
+name: Prune Old Episodes
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Generate Money Stuff Podcast Episode (Piper)"]
+    types: [completed]
+permissions:
+  contents: write
+concurrency:
+  group: prune-episodes
+  cancel-in-progress: false
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Remove episodes beyond the most recent ones
+        env:
+          KEEP: "60"
+        run: |
+          python - <<'EOF'
+          import glob
+          import os
+          import re
+
+          keep = int(os.environ["KEEP"])
+
+          # Episode files are named YYYY-MM-DD.mp3, so sorting by name sorts by date
+          files = sorted(glob.glob("audio/*.mp3"))
+          old = files[:-keep] if len(files) > keep else []
+          old_names = {os.path.basename(f) for f in old}
+
+          for f in old:
+              os.remove(f)
+
+          with open("feed.xml", encoding="utf-8") as fh:
+              feed = fh.read()
+
+          def drop_if_old(match):
+              block = match.group(0)
+              found = re.search(r'audio/([^"<\s]+\.mp3)', block)
+              if found and found.group(1) in old_names:
+                  return ""
+              return block
+
+          new_feed = re.sub(r'\s*<item>.*?</item>', drop_if_old, feed, flags=re.S)
+
+          with open("feed.xml", "w", encoding="utf-8") as fh:
+              fh.write(new_feed)
+
+          print(f"Kept {len(files) - len(old)} episodes, removed {len(old)}")
+          EOF
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A audio feed.xml
+          if git diff --cached --quiet; then
+            echo "Nothing to prune"
+            exit 0
+          fi
+          git commit -m "Prune old episodes"
+          git push
