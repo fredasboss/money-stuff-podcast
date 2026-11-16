@@ -24,7 +24,7 @@ function checkForArticles() {
   const props = PropertiesService.getScriptProperties();
   let seen = JSON.parse(props.getProperty('ARTICLES_SEEN') || '[]');
 
-  const threads = GmailApp.search('in:inbox newer_than:3d', 0, 20);
+  const threads = GmailApp.search('in:inbox newer_than:3d -from:google.com', 0, 20);
 
   threads.forEach(function (thread) {
     thread.getMessages().forEach(function (msg) {
@@ -73,4 +73,11 @@ function setUpArticleTrigger() {
     if (t.getHandlerFunction() === 'checkForArticles') ScriptApp.deleteTrigger(t);
   });
   ScriptApp.newTrigger('checkForArticles').timeBased().everyMinutes(10).create();
+
+  // Skip whatever is already in the inbox (e.g. Google's welcome emails)
+  const ids = [];
+  GmailApp.search('in:inbox', 0, 100).forEach(function (t) {
+    t.getMessages().forEach(function (m) { ids.push(m.getId()); });
+  });
+  PropertiesService.getScriptProperties().setProperty('ARTICLES_SEEN', JSON.stringify(ids));
 }
