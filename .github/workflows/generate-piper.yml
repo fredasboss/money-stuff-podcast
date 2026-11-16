@@ -116,4 +116,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add audio/ feed.xml
           git commit -m "Add episode: ${{ github.event.client_payload.date }}"
-          git push
+          # the article feed may have pushed meanwhile; catch up before pushing
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 10
+          done
+          exit 1
