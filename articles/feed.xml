@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>Evan's Reading List</title>
+    <link>https://fredasboss.github.io/money-stuff-podcast/articles</link>
+    <description>Articles sent by email, read aloud.</description>
+    <language>en-us</language>
+    <itunes:author>Evan</itunes:author>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <lastBuildDate>Mon, 16 Nov 2026 18:24:35 +0000</lastBuildDate>
+    <item>
+      <title>Raw Milk: Five Common Claims, Examined</title>
+      <pubDate>Mon, 16 Nov 2026 18:24:35 +0000</pubDate>
+      <guid isPermaLink="false">https://fredasboss.github.io/money-stuff-podcast/articles/audio/2026-11-16-1824-raw-milk-five-common-claims-examined.mp3</guid>
+      <description>Humans have been consuming milk from domesticated animals for nearly 10,000 years. Today, raw milk is frequently described as an ancestral health food. Its proponents argue that it retains nutrients, antimicrobial components, and beneficial microorganisms that are damaged by heating. At first glance, that argument is not unreasonable. Pasteurization is a heat treatment designed to kill microorgani</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/articles/audio/2026-11-16-1824-raw-milk-five-common-claims-examined.mp3" length="4364669" type="audio/mpeg" />
+      <itunes:title>Raw Milk: Five Common Claims, Examined</itunes:title>
+      <itunes:duration>545</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
