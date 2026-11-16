@@ -130,7 +130,18 @@ def clean_paragraph(p: str) -> str:
 
 def to_paragraphs(text: str):
     """Split into paragraphs, rejoin hard-wrapped lines, and mark headings."""
-    text = text.replace("\r\n", "\n").replace(" ", " ")
+    text = text.replace("\r\n", "\n").replace("\u00a0", " ")
+    # invisible padding characters newsletters put after the preview line
+    text = re.sub("[\u00ad\u034f\u061c\u115f\u1160\u17b4\u17b5\u180e\u200b-\u200f"
+                  "\u2028-\u202e\u2060-\u2064\u3164\ufeff\uffa0]", "", text)
+    # leftovers of links: a "<" or "<URL>" on its own line sat mid-sentence, so rejoin it
+    text = re.sub(r"https?://[^\s>]+", "", text)
+    text = re.sub(r"\[image:[^\]]*\]", "", text)
+    text = re.sub(r"(?im)^[ \t]*(read|view) in (your )?browser[ \t]*$", "", text)
+    text = re.sub(r"[ \t]*\n[ \t]*[<>][<> \t]*\n[ \t]*(?=\S)", " ", text)
+    text = re.sub(r"<(?!\s*\d)|(?<!\d)>(?!\s*\d)", " ", text)
+    text = re.sub(r"[ \t]{2,}", " ", text)
+    text = "\n".join(l.strip() for l in text.split("\n"))
     # Each line is its own paragraph, except lines that look hard-wrapped
     # (long, and not ending a sentence), which are joined to the next line.
     blocks, cur = [], ""

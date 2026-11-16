@@ -46,6 +46,27 @@ jobs:
 
           # Remove URLs and tidy whitespace
           text = re.sub(r'https?://\S+', '', text)
+
+          # Invisible padding characters Bloomberg puts after the preview line
+          # (the voice tried to pronounce them, which sounded like fast gibberish)
+          text = re.sub('[\u00ad\u034f\u061c\u115f\u1160\u17b4\u17b5\u180e\u200b-\u200f'
+                        '\u2028-\u202e\u2060-\u2064\u3164\ufeff\uffa0]', '', text)
+          text = text.replace('\u00a0', ' ')
+          # Drop "Read in browser"
+          text = re.sub(r'(?im)^[ \t]*(read|view) in (your )?browser[ \t]*$', '', text)
+          # Leftovers of removed links and images: "<", ">", "[image: ...]".
+          # A "<" on its own line sat where a link was, mid-sentence, so rejoin the sentence.
+          text = re.sub(r'\[image:[^\]]*\]', '', text)
+          text = re.sub(r'[ \t]*\n[ \t]*[<>][<> \t]*\n[ \t]*(?=\S)', ' ', text)
+          text = re.sub(r'[<>]', ' ', text)
+          # Cut off the email footer
+          footer = re.search(r'(?im)^\s*(unsubscribe|you received this (message|email)|'
+                             r'bloomberg l\.p\.\s*\d|ads powered by|manage (your )?(newsletter|subscription))',
+                             text)
+          if footer:
+              text = text[:footer.start()]
+          text = re.sub(r'[ \t]{2,}', ' ', text)
+          text = "\n".join(l.strip() for l in text.split("\n"))
           text = re.sub(r'\n{3,}', '\n\n', text).strip()
 
           # Join hard-wrapped lines inside a paragraph so the voice doesn't pause mid-sentence
