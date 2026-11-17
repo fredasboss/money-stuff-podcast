@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 16 Nov 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: The Agents Will Trade the Bonds</title>
+      <pubDate>Tue, 17 Nov 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-11-17.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-11-17.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: The Agents Will Trade the Bonds</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-11-17.mp3" length="10031908" type="audio/mpeg" />
+      <itunes:title>Money Stuff: The Agents Will Trade the Bonds</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: People Miss Jensen Huang Already</title>
       <pubDate>Mon, 16 Nov 2026 12:00:00 -0400</pubDate>
