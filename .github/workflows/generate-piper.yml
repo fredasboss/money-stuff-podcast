@@ -61,7 +61,7 @@ jobs:
           text = re.sub(r'[<>]', ' ', text)
           # Cut off the email footer
           footer = re.search(r'(?im)^\s*(unsubscribe|you received this (message|email)|'
-                             r'bloomberg l\.p\.\s*\d|ads powered by|manage (your )?(newsletter|subscription))',
+                             r'bloomberg l\.p\.\s*\d|ads powered by|follow us\s*$|manage (your )?(newsletter|subscription))',
                              text)
           if footer:
               text = text[:footer.start()]
@@ -79,16 +79,62 @@ jobs:
           if len(full_text) > 80000:
               full_text = full_text[:80000] + "\n\nEnd of newsletter."
 
+          # Piper garbles very long sentences into fast mumbling, so break any
+          # sentence over ~200 characters into phrases at commas, semicolons,
+          # dashes and "and"/"but", and read each phrase on its own.
+          MAX = 200
+
+          def phrases(sentence):
+              if len(sentence) <= MAX:
+                  return [sentence]
+              parts = re.split(r'(?<=[,;:—])\s+|\s+(?=(?:and|but|or|so|because|which|while)\s)', sentence)
+              out, cur = [], ""
+              for part in parts:
+                  if cur and len(cur) + len(part) + 1 > MAX:
+                      out.append(cur)
+                      cur = part
+                  else:
+                      cur = (cur + " " + part).strip()
+              if cur:
+                  out.append(cur)
+              # last resort for a phrase that is still too long: split on spaces
+              final = []
+              for o in out:
+                  while len(o) > MAX * 1.5:
+                      cut = o.rfind(" ", 0, MAX)
+                      cut = cut if cut > 0 else MAX
+                      final.append(o[:cut]); o = o[cut:].strip()
+                  final.append(o)
+              return final
+
+          pieces = []   # (text, pause in seconds after it)
+          for para in full_text.split("\n\n"):
+              para = re.sub(r'(^|\s)\*\s', r'\1', para).strip()   # list bullets
+              if not para:
+                  continue
+              sentences = re.split(r'(?<=[.!?])\s+|(?<=[.!?][\"”’)])\s+', para)
+              for k, sentence in enumerate(sentences):
+                  ph = phrases(sentence)
+                  for m, piece in enumerate(ph):
+                      last_in_sentence = m == len(ph) - 1
+                      pause = (0.6 if k == len(sentences) - 1 else 0.25) if last_in_sentence else 0.12
+                      pieces.append((piece, pause))
+          print(f"{len(pieces)} pieces; longest {max(len(p) for p, _ in pieces)} characters")
+
           voice = PiperVoice.load(f"voices/{os.environ['PIPER_VOICE']}.onnx")
-          first = True
-          with wave.open("narration.wav", "wb") as wav:
-              for chunk in voice.synthesize(full_text):
-                  if first:
+          wav = None
+          for piece, pause in pieces:
+              for chunk in voice.synthesize(piece):
+                  if wav is None:
+                      wav = wave.open("narration.wav", "wb")
                       wav.setframerate(chunk.sample_rate)
                       wav.setsampwidth(chunk.sample_width)
                       wav.setnchannels(chunk.sample_channels)
-                      first = False
+                      rate, width = chunk.sample_rate, chunk.sample_width
                   wav.writeframes(chunk.audio_int16_bytes)
+              if wav is not None:
+                  wav.writeframes(b"\x00" * int(rate * pause) * width)
+          wav.close()
           print("Narration saved to narration.wav")
           EOF
       - name: Convert to MP3 and add ID3 tags
