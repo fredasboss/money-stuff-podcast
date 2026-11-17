@@ -107,6 +107,7 @@ CITE_AFTER_WORD = re.compile(r"(?<=[a-z]{3})(\d{1,2}(?:[–\-,]\d{1,2})*)(?=[\s\
 
 def clean_paragraph(p: str) -> str:
     p = re.sub(r"https?://\S+", "", p)
+    p = re.sub(r"^[*•·▪●]\s+", "", p)              # list bullets
     p = re.sub(r"\[\d+(?:[–\-,]\d+)*\]", "", p)            # [12] style references
     p = re.sub(r"\b((?:19|20)\d\d)\.\d{1,3}(?=\s|$)", r"\1.", p)   # "2014.18" -> "2014."
     p = CITE_AFTER_PUNCT.sub(lambda m: m.group(1), p)

@@ -2,7 +2,7 @@ name: Prune Old Episodes
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Generate Money Stuff Podcast Episode (Piper)"]
+    workflows: ["Generate Money Stuff Podcast Episode (Kokoro)"]
     types: [completed]
 permissions:
   contents: write
