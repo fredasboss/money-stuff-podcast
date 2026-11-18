@@ -9,7 +9,17 @@
     <itunes:author>Matt Levine / Bloomberg</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 17 Nov 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>Money Stuff: A Lot of People Want Anthropic Stock</title>
+      <pubDate>Wed, 18 Nov 2026 12:00:00 -0400</pubDate>
+      <guid>https://fredasboss.github.io/money-stuff-podcast/audio/2026-11-18.mp3</guid>
+      <link>https://fredasboss.github.io/money-stuff-podcast/audio/2026-11-18.mp3</link>
+      <description>Auto-generated audio of Money Stuff newsletter: Money Stuff: A Lot of People Want Anthropic Stock</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/audio/2026-11-18.mp3" length="9446400" type="audio/mpeg" />
+      <itunes:title>Money Stuff: A Lot of People Want Anthropic Stock</itunes:title>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Money Stuff: The Agents Will Trade the Bonds</title>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0400</pubDate>
