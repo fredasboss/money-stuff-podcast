@@ -62,3 +62,14 @@ jobs:
             sleep 10
           done
           exit 1
+      - name: Tell Overcast to check the feed now
+        continue-on-error: true
+        run: |
+          FEED_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/articles/feed.xml"
+          NEWEST=$(grep -o '<enclosure url="[^"]*"' articles/feed.xml | head -1 | cut -d'"' -f2)
+          # wait (up to ~10 min) for GitHub Pages to publish the new episode
+          for i in $(seq 1 30); do
+            if curl -fsS "$FEED_URL?check=$(date +%s)" | grep -qF "$NEWEST"; then echo "Feed is live"; break; fi
+            sleep 20
+          done
+          curl -fsS -X POST "https://overcast.fm/ping" --data-urlencode "urlprefix=$FEED_URL" && echo "Pinged Overcast"
