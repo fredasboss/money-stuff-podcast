@@ -14,6 +14,7 @@ import json
 import os
 import re
 import sys
+import unicodedata
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import format_datetime
@@ -107,6 +108,19 @@ CITE_AFTER_WORD = re.compile(r"(?<=[a-z]{3})(\d{1,2}(?:[–\-,]\d{1,2})*)(?=[\s\
 
 def clean_paragraph(p: str) -> str:
     p = re.sub(r"https?://\S+", "", p)
+    p = re.sub(r"\bmailto:\S*", "", p)
+    # image descriptions and share buttons in [brackets]; short [insertions] in quotes are kept
+    p = re.sub(r"\[\s*(?:photo|image|illustration|chart|graphic|video|logo|share|tweet|post to|email this|"
+               r"axios on|follow|view in|a (?:line|bar)? ?chart)[^\]]*\]?", "", p, flags=re.I)
+    p = re.sub(r"\[[^\]]{40,}\]", "", p)
+    if re.fullmatch(r"(?:\s*\[[^\]]*\]?[\s.,|]*)+", p):
+        return ""
+    p = re.sub(r"(^|\s)\*+(?=\s)", r"\1", p)                  # inline "*" bullets
+    p = re.sub(r"\*(\S(?:[^*]*?\S)?)\*", r"\1", p)            # *emphasis*
+    p = re.sub(r"\s+[|•·]\s+", ". ", p)               # " | " and " · " separators
+    # words run together where a link used to be: "HuangBuilt", "ofAnthropic"
+    p = re.sub(r"\b([a-z]{2,}|[A-Z][a-z]{2,})([A-Z][a-z]{2,})\b", r"\1 \2", p)
+    p = re.sub(r"([a-z]{2})\.([A-Z][a-z])", r"\1. \2", p)     # "so.Next" -> "so. Next"
     p = re.sub(r"^[*•·▪●]\s+", "", p)              # list bullets
     p = re.sub(r"\[\d+(?:[–\-,]\d+)*\]", "", p)            # [12] style references
     p = re.sub(r"\b((?:19|20)\d\d)\.\d{1,3}(?=\s|$)", r"\1.", p)   # "2014.18" -> "2014."
@@ -124,7 +138,7 @@ def clean_paragraph(p: str) -> str:
     p = re.sub(r"#(?=\d)", "number ", p)
     p = re.sub(r"(\d)\s*[–-]\s*(\d)", r"\1 to \2", p)       # 4–5 -> 4 to 5
     p = p.replace("—", ", ").replace("–", ", ")
-    p = re.sub(r"\s+,", ",", p)
+    p = re.sub(r"\s+([,.;:!?])(?=[\s\"”’)]|$)", r"\1", p)     # "word ." -> "word."
     p = re.sub(r"[ \t]{2,}", " ", p)
     return p.strip()
 
@@ -133,6 +147,10 @@ def to_paragraphs(text: str):
     """Split into paragraphs, rejoin hard-wrapped lines, and mark headings."""
     text = text.replace("\r\n", "\n").replace("\u00a0", " ")
     # invisible padding characters newsletters put after the preview line
+    text = "".join(ch for ch in text
+                   if ch == "\u00b0" or (unicodedata.category(ch) not in ("So", "Sk", "Cs", "Co")
+                                          and not 0x2190 <= ord(ch) <= 0x21ff
+                                          and not 0xfe00 <= ord(ch) <= 0xfe0f and ch != "\u20e3"))
     text = re.sub("[\u00ad\u034f\u061c\u115f\u1160\u17b4\u17b5\u180e\u200b-\u200f"
                   "\u2028-\u202e\u2060-\u2064\u3164\ufeff\uffa0]", "", text)
     # leftovers of links: a "<" or "<URL>" on its own line sat mid-sentence, so rejoin it
@@ -179,11 +197,57 @@ def to_paragraphs(text: str):
         if heading:
             para += "."
         out.append((para, heading))
+    return drop_junk(out)
+
+
+# ---- newsletter junk: sponsor blocks, photo credits, share buttons, footers ----
+
+AD_LINE = re.compile(r"^(presented by|sponsored by|brought to you by|powered by|in partnership with)\b", re.I)
+AD_BLOCK = re.compile(r"^(a message from|advertisement|sponsored( content)?|partner content|together with|"
+                      r"from our (partners?|sponsors?)|a word from)\b", re.I)
+CALL_TO_ACTION = re.compile(r"^(get the|get your|buy|shop|learn more|sign up|register|subscribe|download|contact us|"
+                            r"discover|join|claim|order|book now|reserve|apply|request|find out|click|see how)\b|"
+                            r"(learn more|sign up|get started|buy now|shop now|order now)[.!]?$", re.I)
+CREDIT = re.compile(r"^(photo( illustration)?|illustration|images?|chart|graphic|data|sources?|credit|video|map|"
+                    r"stock)s?:\s", re.I)
+NOISE = re.compile(r"(view (it |this )?(in (your )?|on )?(browser|online|web)|web version|"
+                   r"\b[\d,]+ words, an? [\d.]+.minute read|^share (this|on)\b|^forward(ed)? (this|to a friend)|"
+                   r"^go deeper\b|^read (more|the full|on)\b|^continue reading)", re.I)
+FOOTER = re.compile(r"^(thanks for reading|thank you for reading|thanks to .{0,60} for (editing|copy)|"
+                    r"we'?d (like|love) (your feedback|to hear from you)|tell your friends|"
+                    r"if (you received|someone forwarded) this|you (are |were )?(received|receiving) this|"
+                    r"you'?re receiving this|to stop receiving|unsubscribe|manage (your )?(email )?preferences|"
+                    r"advertise with us|.{0,25}thanks our partners|follow .{0,30}\b(on|across)\b|connect with us|"
+                    r"why stop here|please invite your friends|like this .{0,30}(style|format)|copyright|"
+                    r"all rights reserved|need help\?|privacy policy|was this (email|newsletter) forwarded)", re.I)
+
+
+def drop_junk(paras):
+    out, skip = [], 0
+    n = len(paras)
+    for i, (p, h) in enumerate(paras):
+        if skip:
+            skip -= 1
+            if (CALL_TO_ACTION.search(p) and len(p) < 120) or i + 1 < n and re.match(r"^\d+\.\s", paras[i + 1][0]):
+                skip = 0           # the sponsor block ends with its "buy now" / before the next numbered story
+            continue
+        if i > n * 0.55 and FOOTER.search(p):
+            break                  # everything after this is the email footer
+        if AD_BLOCK.search(p) and len(p) < 80:
+            skip = 6               # drop the sponsor block that follows (at most 6 paragraphs)
+            continue
+        if AD_LINE.search(p) and len(p) < 80:
+            continue
+        if (CREDIT.search(p) and len(p) < 250) or (NOISE.search(p) and len(p) < 200):
+            continue
+        out.append((p, h))
     return out
 
 
 def tidy_title(subject: str) -> str:
-    t = re.sub(r"^\s*((fwd?|fw|re)\s*:\s*)+", "", subject or "", flags=re.I).strip()
+    t = "".join(ch for ch in (subject or "") if unicodedata.category(ch) not in ("So", "Sk", "Cs", "Co")
+                and not 0xfe00 <= ord(ch) <= 0xfe0f and ch != "\u200d")
+    t = re.sub(r"^\s*((fwd?|fw|re)\s*:\s*)+", "", t, flags=re.I).strip()
     return t
 
 
