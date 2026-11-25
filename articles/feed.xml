@@ -8,7 +8,17 @@
     <itunes:author>Evan</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 25 Nov 2026 14:04:45 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 14:04:55 +0000</lastBuildDate>
+    <item>
+      <title>DealBook: The Nvidia rally fizzles</title>
+      <pubDate>Wed, 25 Nov 2026 14:04:55 +0000</pubDate>
+      <guid isPermaLink="false">https://fredasboss.github.io/money-stuff-podcast/articles/audio/2026-11-25-1404-dealbook-the-nvidia-rally-fizzles.mp3</guid>
+      <description>Also, Anthropic’s other big expense. Good morning. Andrew here. Happy Thanksgiving.</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/articles/audio/2026-11-25-1404-dealbook-the-nvidia-rally-fizzles.mp3" length="6096889" type="audio/mpeg" />
+      <itunes:title>DealBook: The Nvidia rally fizzles</itunes:title>
+      <itunes:duration>762</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Bonds didn't join the party</title>
       <pubDate>Wed, 25 Nov 2026 14:04:45 +0000</pubDate>
