@@ -8,7 +8,17 @@
     <itunes:author>Evan</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 25 Nov 2026 14:04:55 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 17:04:09 +0000</lastBuildDate>
+    <item>
+      <title>All cylinders</title>
+      <pubDate>Wed, 25 Nov 2026 17:04:09 +0000</pubDate>
+      <guid isPermaLink="false">https://fredasboss.github.io/money-stuff-podcast/articles/audio/2026-11-25-1704-all-cylinders.mp3</guid>
+      <description />
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/articles/audio/2026-11-25-1704-all-cylinders.mp3" length="3262948" type="audio/mpeg" />
+      <itunes:title>All cylinders</itunes:title>
+      <itunes:duration>407</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>DealBook: The Nvidia rally fizzles</title>
       <pubDate>Wed, 25 Nov 2026 14:04:55 +0000</pubDate>
