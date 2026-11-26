@@ -8,7 +8,17 @@
     <itunes:author>Evan</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 26 Nov 2026 16:02:28 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 16:09:19 +0000</lastBuildDate>
+    <item>
+      <title>Hockey analytics</title>
+      <pubDate>Thu, 26 Nov 2026 16:09:19 +0000</pubDate>
+      <guid isPermaLink="false">https://fredasboss.github.io/money-stuff-podcast/articles/audio/2026-11-26-1609-hockey-analytics.mp3</guid>
+      <description>Having data is one piece of the puzzle in hockey, but its value can only go so far without a real understanding of how to use, interpret and contextualize the information. The goal today is to help bridge that gap with a refreshed hockey analytics primer. Before we get started, there are some key broad strokes to keep in mind. In hockey, it’s true they don’t ask how, they ask how many. Goals are w</description>
+      <enclosure url="https://fredasboss.github.io/money-stuff-podcast/articles/audio/2026-11-26-1609-hockey-analytics.mp3" length="4443751" type="audio/mpeg" />
+      <itunes:title>Hockey analytics</itunes:title>
+      <itunes:duration>555</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>How F1 makes money year-round</title>
       <pubDate>Thu, 26 Nov 2026 16:02:28 +0000</pubDate>
